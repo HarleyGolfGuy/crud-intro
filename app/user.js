@@ -6,13 +6,15 @@ db.once('open', function callback() {
 	var userSchema = new mongoose.Schema({
 		email: String,
 		first_name: String,
-		last_name: String
+		last_name: String,
+	    	role: String
 	});
 	var User = mongoose.model( 'User', userSchema );
 	var seth = new User({
 		email: 'sethwill@gmail.com',
 		first_name: 'Seth',
-		last_name: 'Williams'
+		last_name: 'Williams',
+		role: 'king'
 	});
 	seth.save(function(err, seth) {
 		if (err) return console.error(err);
